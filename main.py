@@ -27,6 +27,7 @@ parsed_data = []
 for ticker, news_table in news_tables.items():
     for row in news_table.findAll('tr'):
         title = row.a.text
+        print(title)
         date_data = row.td.text.split(' ')
 
         if len(date_data) == 1:
@@ -37,6 +38,5 @@ for ticker, news_table in news_tables.items():
 
         parsed_data.append([ticker, date, time, title])
 
-print(parsed_data)
-    
+
 
